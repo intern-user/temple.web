@@ -1,10 +1,10 @@
 // pages/HomePage.jsx - Complete updated version
 import React, { useState, useEffect, useCallback } from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import Hero from '../components/Hero';
-import FestivalBanner from '../components/FestivalBanner';
-import TempleGrid from '../components/TempleGrid';
+import Header from '../Components/Header';
+import Footer from '../Components/Footer';
+import Hero from '../Components/Hero';
+import FestivalBanner from '../Components/FestivalBanner';
+import TempleGrid from '../Components/TempleGrid';
 import useTemples from '../hooks/useTemples';
 
 const PAGE_SIZE = 9;
