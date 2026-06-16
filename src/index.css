@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+/* Custom animations */
+@keyframes aboutTempleSlideUp {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(calc(-50% - 9px));
+    }
+}
+
+@keyframes slow-pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.animate-slide-up {
+    animation: aboutTempleSlideUp 18s linear infinite;
+}
+
+.animate-slide-up:hover {
+    animation-play-state: paused;
+}
+
+.animate-slow-pulse {
+    animation: slow-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Hide scrollbar for carousel */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d35400;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #e67e22;
+}
+
+/* Custom utility classes */
+@utility line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+@utility line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+@theme {
+    --color-temple-bg: #1a1a2e;
+    --color-temple-card: #16213e;
+    --color-temple-primary: #e67e22;
+    --color-temple-secondary: #f39c12;
+    --color-temple-text: #ecf0f1;
+    --color-temple-text-muted: #bdc3c7;
+    --color-temple-accent: #e74c3c;
+}

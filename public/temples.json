@@ -1,0 +1,43 @@
+{
+  "updatedAt": "2026-06-05",
+  "temples": [ 
+    {
+      "id": "nagdevta-temple",
+      "name": "Nagdevta Temple",
+      "city": "Kunda",
+      "state": "Uttarakhand",
+      "deity": "Shiva",
+      "description": "A serene temple dedicated to Lord Shiva, nestled in the beautiful hills of Kunda, Tehri Garhwal. This ancient temple holds great spiritual significance for the local community.",
+      "image": "/assets/",
+      "images": [
+        "/assets/n1.jpg",
+        "/assets/n2.jpg",
+        "/assets/n3.jpg"
+        
+      ],
+      "popularity": 88,
+      "rating": 4.5,
+      "views": 35000,
+      "donations": 980000,
+      "isLive": false,
+      "isNew": true,
+      "liveStartedAt": null,
+      "createdAt": "2026-06-01",
+      "tags": ["shiva", "himalaya", "peaceful"],
+      "geo": {
+        "lat": 30.3283,
+        "lng": 78.4429
+      },
+      "pradhanProfile": {
+        "name": "Prayelala Nautiyal",
+        "designation": "Gram Pradhan",
+        "gramPanchayat": "Kunda",
+        "district": "Tehri Garhwal, Uttarakhand",
+        "phoneNo": "6398416623",
+        "desc1": "A dedicated village leader committed to the development of Kunda Gram Panchayat and the preservation of Nagdevta Temple's spiritual heritage.",
+        "desc2": "Successfully led multiple initiatives including temple renovation, road development, and community welfare programs benefiting over 500 families.",
+        "desc3": "Together we will preserve our cultural heritage and ensure the temple remains a beacon of faith for generations to come."
+      }
+    }
+  ]
+}
