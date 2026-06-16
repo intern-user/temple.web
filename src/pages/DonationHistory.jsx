@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import TempleHeader from '../components/TempleHeader';
+import TempleHeader from '../Components/TempleHeader';
 
 const DonationHistory = () => {
     const [searchParams] = useSearchParams();
