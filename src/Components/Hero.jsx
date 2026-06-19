@@ -1,4 +1,4 @@
-// src/components/Hero.jsx
+// src/Components/Hero.jsx
 import React from 'react';
 
 const Hero = ({ searchQuery, setSearchQuery, resetSearch, handleNearby, templeCount, favoriteCount, currentLang }) => {

@@ -1,4 +1,4 @@
-// components/PradhanSection.jsx
+// Components/PradhanSection.jsx
 import React from 'react';
 import gramPradhanImage from '../../Assets/naagdevta/GP.avif';
 

@@ -46,7 +46,7 @@ const TempleHeader = ({ temple, currentLang, setCurrentLang, isHistoryPage }) =>
                 </div>
 
                 {!isHistoryPage && temple && (
-                    // components/TempleHeader.jsx - Add pradhan link to navigation
+                    // Components/TempleHeader.jsx - Add pradhan link to navigation
                     <nav className="flex gap-2 mt-3 overflow-x-auto pb-2 scrollbar-hide">
                         <a href="#home" className="px-3 py-2 text-amber-400 hover:text-amber-200 font-bold whitespace-nowrap transition">
                             {currentLang === "hi" ? "मुख्य पृष्ठ" : "Home"}

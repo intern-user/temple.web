@@ -1,4 +1,4 @@
-// src/components/FestivalBanner.jsx
+// src/Components/FestivalBanner.jsx
 import React, { useState, useEffect } from 'react';
 
 const FestivalBanner = ({ temples, setFestivalMatchedIds, currentLang }) => {

@@ -1,4 +1,4 @@
-// src/components/TempleGrid.jsx
+// src/Components/TempleGrid.jsx
 import React from 'react';
 import TempleCard from './TempleCard';
 

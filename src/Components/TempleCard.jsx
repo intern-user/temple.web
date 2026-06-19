@@ -1,4 +1,4 @@
-// src/components/TempleCard.jsx
+// src/Components/TempleCard.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 
