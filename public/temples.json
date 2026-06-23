@@ -1,19 +1,32 @@
 {
-  "updatedAt": "2026-06-05",
-  "temples": [ 
+  "updatedAt": "2026-06-23",
+  "temples": [
     {
-      "id": "nagdevta-temple",
+      "id": "naagdevta",
       "name": "Nagdevta Temple",
       "city": "Kunda",
       "state": "Uttarakhand",
       "deity": "Shiva",
-      "description": "A serene temple dedicated to Lord Shiva, nestled in the beautiful hills of Kunda, Tehri Garhwal. This ancient temple holds great spiritual significance for the local community.",
-      "image": "/assets/",
+      "description": "A serene temple dedicated to Lord Shiva, nestled in the beautiful hills of Kunda, Tehri Garhwal.",
+      "image": "/assets/naagdevta/nd8.jpeg",
       "images": [
-        "/assets/n1.jpg",
-        "/assets/n2.jpg",
-        "/assets/n3.jpg"
-        
+        "/assets/naagdevta/nd1.jpeg",
+        "/assets/naagdevta/nd2.jpeg",
+        "/assets/naagdevta/nd3.jpeg",
+        "/assets/naagdevta/nd4.jpeg",
+        "/assets/naagdevta/nd5.jpeg",
+        "/assets/naagdevta/nd6.jpeg",
+        "/assets/naagdevta/nd7.jpeg",
+        "/assets/naagdevta/nd8.jpeg",
+        "/assets/naagdevta/nd9.jpeg"
+      ],
+      "videos": [
+        {
+          "title": "Nagdevta Temple Darshan",
+          "video": "/assets/naagdevta/nd.video1.mp4",
+          "description": "Temple moments captured in motion with devotion.",
+          "poster": "/assets/naagdevta/nd8.jpeg"
+        }
       ],
       "popularity": 88,
       "rating": 4.5,
@@ -34,9 +47,10 @@
         "gramPanchayat": "Kunda",
         "district": "Tehri Garhwal, Uttarakhand",
         "phoneNo": "6398416623",
-        "desc1": "A dedicated village leader committed to the development of Kunda Gram Panchayat and the preservation of Nagdevta Temple's spiritual heritage.",
-        "desc2": "Successfully led multiple initiatives including temple renovation, road development, and community welfare programs benefiting over 500 families.",
-        "desc3": "Together we will preserve our cultural heritage and ensure the temple remains a beacon of faith for generations to come."
+        "image": "/assets/naagdevta/gp.jpeg",
+        "desc1": "A dedicated village leader committed to the development of Kunda Gram Panchayat.",
+        "desc2": "Successfully led multiple initiatives including temple renovation and road development.",
+        "desc3": "Together we will preserve our cultural heritage."
       }
     }
   ]

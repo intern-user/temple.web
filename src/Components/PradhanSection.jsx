@@ -1,12 +1,9 @@
 // Components/PradhanSection.jsx
 import React from 'react';
-import gramPradhanImage from '../../Assets/naagdevta/GP.avif';
 
 const PradhanSection = ({ temple, currentLang }) => {
     const pradhan = temple?.pradhanProfile;
-    const profileImage = temple.id === "nagdevta-temple" ? gramPradhanImage : temple.pradhanImage;
 
-    // Check if pradhan profile has any data
     const hasPradhanData = () => {
         if (!pradhan) return false;
         return pradhan.name || pradhan.designation || pradhan.gramPanchayat ||
@@ -18,33 +15,42 @@ const PradhanSection = ({ temple, currentLang }) => {
         return null;
     }
 
+    const profileImage = pradhan.image || null;
+
     return (
-        <section id="pradhan" className="py-16 px-4 bg-linear-to-br from-stone-800 to-stone-900">
+        <section id="pradhan" className="py-16 px-4 bg-gradient-to-br from-stone-800 to-stone-900">
             <div className="container mx-auto max-w-4xl">
                 <h2 className="text-3xl md:text-4xl font-bold text-center text-amber-200 mb-8">
                     {currentLang === "hi" ? "ग्राम प्रधान" : "Gram Pradhan"}
                 </h2>
 
-                <div className="bg-linear-to-br from-amber-900/30 to-orange-900/30 rounded-2xl p-6 md:p-8 border border-amber-700/30 backdrop-blur-sm">
+                <div className="bg-gradient-to-br from-amber-900/30 to-orange-900/30 rounded-2xl p-6 md:p-8 border border-amber-700/30 backdrop-blur-sm">
                     <div className="flex flex-col md:flex-row gap-8 items-start">
 
-                        <div className="flex-shrink-0 self-center md:self-start">
+                        <div className="shrink-0 self-center md:self-start">
                             <div className="w-36 h-36 bg-gradient-to-br from-amber-600 to-orange-600 rounded-full overflow-hidden border-4 border-amber-400 shadow-xl">
                                 {profileImage ? (
                                     <img
                                         src={profileImage}
                                         alt={pradhan.name || "Gram Pradhan"}
                                         className="w-full h-full object-cover"
+                                        onError={(e) => {
+                                            e.target.style.display = 'none';
+                                            e.target.parentElement.innerHTML = `
+                                                <div class="w-full h-full flex items-center justify-center text-5xl text-amber-100 font-bold">
+                                                    ${pradhan.name ? pradhan.name.charAt(0).toUpperCase() : "GP"}
+                                                </div>
+                                            `;
+                                        }}
                                     />
                                 ) : (
-                                    <div className="w-full h-full flex items-center justify-center text-5xl text-amber-100">
-                                        GP
+                                    <div className="w-full h-full flex items-center justify-center text-5xl text-amber-100 font-bold">
+                                        {pradhan.name ? pradhan.name.charAt(0).toUpperCase() : "GP"}
                                     </div>
                                 )}
                             </div>
                         </div>
 
-                        {/* Pradhan Details */}
                         <div className="flex-1">
                             {pradhan.name && (
                                 <h3 className="text-2xl md:text-3xl font-bold text-amber-300 mb-2 text-center md:text-left">
@@ -52,7 +58,6 @@ const PradhanSection = ({ temple, currentLang }) => {
                                 </h3>
                             )}
 
-                            {/* Info Grid */}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                                 {pradhan.designation && (
                                     <div className="flex items-center gap-3 bg-white/5 rounded-lg p-3">
@@ -107,7 +112,6 @@ const PradhanSection = ({ temple, currentLang }) => {
                                 )}
                             </div>
 
-                            {/* Descriptions */}
                             <div className="space-y-4 mt-4">
                                 {pradhan.desc1 && (
                                     <div className="bg-amber-900/20 rounded-lg p-4 border-l-4 border-amber-500">

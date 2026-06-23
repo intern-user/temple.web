@@ -391,7 +391,7 @@ const HomePage = () => {
                 </section>
             </main>
 
-            <Footer currentLang={currentLang} templeName="Shree Dharma Temple" />
+            <Footer currentLang={currentLang} templeName="DevBhoomi Temple" />
         </div>
     );
 };

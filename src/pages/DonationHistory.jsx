@@ -1,14 +1,23 @@
 import { useEffect, useState } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import TempleHeader from '../Components/TempleHeader';
+import useTemples from '../hooks/useTemples';
 
 const DonationHistory = () => {
-    const [searchParams] = useSearchParams();
+    const { id } = useParams()
+    const { temples } = useTemples()
     const [donations, setDonations] = useState([]);
     const [currentLang, setCurrentLang] = useState("en");
+    const [temple, setTemple] = useState(null);
 
-   
+    useEffect(() => {
+        if(id && temples.length > 0){
+             const foundTemple = temples.find(t => t.id === id);
+            setTemple(foundTemple || null);
+        }
+        
 
+    }, [id, temples])
     const purposeLabels = {
         Annadanam: "Annadanam",
         "Temple Maintenance": "Temple Maintenance",
@@ -43,7 +52,7 @@ const DonationHistory = () => {
 
     return (
         <div className="min-h-screen bg-linear-to-br from-stone-900 via-stone-800 to-stone-900">
-            <TempleHeader currentLang={currentLang} setCurrentLang={setCurrentLang} isHistoryPage />
+            <TempleHeader temple={temple} currentLang={currentLang} setCurrentLang={setCurrentLang} isHistoryPage />
 
             <main className="container mx-auto px-4 py-8">
                 <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-6 max-w-4xl mx-auto">

@@ -6,7 +6,7 @@ const Footer = ({ currentLang, templeName }) => {
         <footer className="bg-gray-800 border-t border-gray-700 py-8 mt-8">
             <div className="container mx-auto px-4 text-center">
                 <p className="text-gray-300">
-                    © 2026 {templeName || "Shree Dharma Temple"}. All Rights Reserved.
+                    © 2026 {templeName || "DevBhoomi Temple"}. All Rights Reserved.
                 </p>
                 <p className="text-gray-400 text-sm mt-2">
                     {currentLang === "hi"

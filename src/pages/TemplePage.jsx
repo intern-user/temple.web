@@ -12,47 +12,6 @@ import TempleHero from '../Components/TempleHero';
 import TraditionsSection from '../Components/TraditionsSection';
 import TransparencySection from '../Components/TransparencySection';
 import PradhanSection from '../Components/PradhanSection';
-import nagdevtaHeroImage from '../../Assets/naagdevta/nd8.jpeg';
-import nagdevtaImage1 from '../../Assets/naagdevta/nd1.jpeg';
-import nagdevtaImage2 from '../../Assets/naagdevta/nd2.jpeg';
-import nagdevtaImage3 from '../../Assets/naagdevta/nd3.jpeg';
-import nagdevtaImage4 from '../../Assets/naagdevta/nd4.jpeg';
-import nagdevtaImage5 from '../../Assets/naagdevta/nd5.jpeg';
-import nagdevtaImage6 from '../../Assets/naagdevta/nd6.jpeg';
-import nagdevtaImage7 from '../../Assets/naagdevta/nd7.jpeg';
-import nagdevtaImage8 from '../../Assets/naagdevta/nd8.jpeg';
-import nagdevtaImage9 from '../../Assets/naagdevta/nd9.jpeg';
-
-const templeImageOverrides = {
-    "nagdevta-temple": {
-        image: nagdevtaHeroImage,
-        images: [
-            nagdevtaImage1,
-            nagdevtaImage2,
-            nagdevtaImage3,
-            nagdevtaImage4,
-            nagdevtaImage5,
-            nagdevtaImage6,
-            nagdevtaImage7,
-            nagdevtaImage8,
-            nagdevtaImage9
-        ]
-    }
-};
-
-const applyTempleOverrides = (temple) => {
-    const override = templeImageOverrides[temple.id];
-    if (!override) return temple;
-
-    return {
-        ...temple,
-        image: override.image,
-        images: [
-            ...override.images,
-            ...(temple.images || []).filter((image) => !override.images.includes(image) && image !== override.image)
-        ]
-    };
-};
 
 const TemplePage = () => {
     const [searchParams] = useSearchParams();
@@ -70,17 +29,16 @@ const TemplePage = () => {
 
         const loadTemple = async () => {
             try {
-                const response = await fetch("/temples.json");
+                const response = await fetch("/temples.json?t=" + Date.now());
+                if (!response.ok) throw new Error('Failed to load temples');
                 const data = await response.json();
                 const temples = data?.temples || [];
                 const found = temples.find(t => String(t.id) === templeId);
 
-                console.log("temple:", temples)
-                console.log("found:", found)
                 if (!found) {
                     setError("Temple not found");
                 } else {
-                    setTemple(applyTempleOverrides(found));
+                    setTemple(found);
                 }
             } catch (err) {
                 setError(err.message);

@@ -6,7 +6,7 @@ const Hero = ({ searchQuery, setSearchQuery, resetSearch, handleNearby, templeCo
         <section className="relative min-h-[50vh] flex items-center justify-center bg-gradient-to-br from-orange-500 to-orange-700">
             <div className="container mx-auto px-4 py-16 text-center">
                 <div className="inline-block px-4 py-1 bg-white/20 rounded-full text-white text-sm font-bold mb-4 backdrop-blur-sm">
-                    {currentLang === "hi" ? "मंदिर एक्सप्लोरर प्लेटफॉर्म" : "Temple Explorer Platform"}
+                    {currentLang === "hi" ? "देवभूमि मंदिर प्लेटफॉर्म" : "DevBhoomi Mandir Platform"}
                 </div>
                 <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
                     {currentLang === "hi" ? "भारत के मंदिरों को खोजें" : "Explore Temples Across India"}
